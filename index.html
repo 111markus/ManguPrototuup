@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AimTrainer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #1a1a2e;
+        color: #eee;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      h1 span {
+        color: #e94560;
+      }
+
+      p {
+        color: #aaa;
+        margin-bottom: 30px;
+      }
+
+      .container {
+        text-align: center;
+        padding: 40px;
+      }
+
+      button {
+        background: #e94560;
+        color: #fff;
+        border: none;
+        padding: 14px 36px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      button:hover {
+        background: #c73650;
+      }
+
+      .btn-row {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      #devBtn {
+        background: #0f3460;
+      }
+
+      #devBtn:hover {
+        background: #16213e;
+      }
+
+      #gallery {
+        margin-top: 30px;
+        display: none;
+      }
+
+      #gallery.visible {
+        display: block;
+      }
+
+      #gallery h2 {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+        color: #ccc;
+      }
+
+      #gallery img {
+        max-width: 100%;
+        max-height: 400px;
+        border-radius: 10px;
+        border: 2px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>AIM<span>TRAINER</span></h1>
+      <p>Treenige oma sihtimist</p>
+
+      <div class="btn-row">
+        <button id="startBtn">Alusta</button>
+        <button id="devBtn">Vaata arendust</button>
+      </div>
+
+      <div id="gallery">
+        <h2>Arenduse pilt</h2>
+        <img src="pildid/pilt.png" alt="Arenduse pilt" />
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("startBtn")
+        .addEventListener("click", function () {
+          alert("Mäng tuleb varsti!");
+        });
+
+      document
+        .getElementById("devBtn")
+        .addEventListener("click", function () {
+          var gallery = document.getElementById("gallery");
+          gallery.classList.toggle("visible");
+          this.textContent = gallery.classList.contains("visible")
+            ? "Peida arendus"
+            : "Vaata arendust";
+        });
+    </script>
+  </body>
+</html>
